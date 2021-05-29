@@ -389,6 +389,21 @@ public class SolutionJavaCodingProblem {
         }
         return res;
     }
+  function reshape($n,  $str) {
+        //replace each space with empty string
+        $str = str_replace(" ", "", $str);
+
+        //insert a '\n' character each n characters
+        $res = "";
+        for ($i = 0; $i < strlen($str); $i++) {
+            if ($i % $n == 0 && $i != 0)
+                $res = $res . '\n' . substr($str, $i, 1);
+            else
+                $res .=  substr($str, $i, 1);
+          
+        }
+        return $res;
+  }
 
     /*
      *  Q17:
